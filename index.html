@@ -23,7 +23,7 @@
             position: relative;
         }
 
-        /* Relaxing Space / Starry Background */
+        /* Starry Background */
         #canvas-stars {
             position: fixed;
             top: 0;
@@ -34,50 +34,56 @@
             pointer-events: none;
         }
 
-        /* Glowing Radial Background Accents */
+        /* Ambient Glow Effects */
         .bg-glow-top {
             position: absolute;
             top: -100px;
             left: 50%;
             transform: translateX(-50%);
-            width: 320px;
-            height: 320px;
-            background: radial-gradient(circle, rgba(37, 99, 235, 0.35) 0%, rgba(99, 102, 241, 0.15) 50%, rgba(0,0,0,0) 80%);
+            width: 340px;
+            height: 340px;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.4) 0%, rgba(99, 102, 241, 0.18) 50%, rgba(0,0,0,0) 80%);
             border-radius: 50%;
-            filter: blur(40px);
+            filter: blur(45px);
             z-index: 1;
             pointer-events: none;
-            animation: pulseGlow 6s ease-in-out infinite alternate;
+            animation: pulseGlow 5s ease-in-out infinite alternate;
         }
 
         @keyframes pulseGlow {
             0% { opacity: 0.5; transform: translateX(-50%) scale(0.9); }
-            100% { opacity: 0.95; transform: translateX(-50%) scale(1.15); }
+            100% { opacity: 0.95; transform: translateX(-50%) scale(1.2); }
         }
 
-        /* Glassmorphism Card Styling */
+        /* Glassmorphism Cards */
         .glass-card {
-            background: rgba(13, 20, 38, 0.7);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(59, 130, 246, 0.2);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            background: rgba(13, 20, 38, 0.75);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid rgba(59, 130, 246, 0.25);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.12);
         }
 
         .glass-inner-card {
-            background: rgba(15, 23, 42, 0.65);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(59, 130, 246, 0.25);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+            transition: transform 0.3s ease, border-color 0.3s ease;
         }
 
-        /* Animated Glowing Pulse Button */
+        .glass-inner-card:hover {
+            border-color: rgba(59, 130, 246, 0.5);
+            transform: translateY(-2px);
+        }
+
+        /* High-Converting Pulse Button */
         .btn-pulse-glow {
             position: relative;
             background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 50%, #1e40af 100%);
-            box-shadow: 0 0 20px rgba(37, 99, 235, 0.5);
+            box-shadow: 0 0 20px rgba(37, 99, 235, 0.6);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            animation: buttonGlow 2.5s infinite;
+            animation: buttonGlow 2.2s infinite;
             overflow: hidden;
         }
 
@@ -88,20 +94,15 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: linear-gradient(
-                60deg,
-                transparent,
-                rgba(255, 255, 255, 0.25),
-                transparent
-            );
+            background: linear-gradient(60deg, transparent, rgba(255, 255, 255, 0.35), transparent);
             transform: rotate(30deg);
-            animation: shineEffect 3.5s infinite;
+            animation: shineEffect 3s infinite;
         }
 
         @keyframes buttonGlow {
-            0% { box-shadow: 0 0 15px rgba(37, 99, 235, 0.4), 0 0 30px rgba(37, 99, 235, 0.2); }
-            50% { box-shadow: 0 0 25px rgba(59, 130, 246, 0.8), 0 0 50px rgba(37, 99, 235, 0.4); }
-            100% { box-shadow: 0 0 15px rgba(37, 99, 235, 0.4), 0 0 30px rgba(37, 99, 235, 0.2); }
+            0% { box-shadow: 0 0 15px rgba(37, 99, 235, 0.5), 0 0 30px rgba(37, 99, 235, 0.2); }
+            50% { box-shadow: 0 0 28px rgba(59, 130, 246, 0.9), 0 0 55px rgba(37, 99, 235, 0.5); }
+            100% { box-shadow: 0 0 15px rgba(37, 99, 235, 0.5), 0 0 30px rgba(37, 99, 235, 0.2); }
         }
 
         @keyframes shineEffect {
@@ -110,23 +111,16 @@
             100% { left: 100%; }
         }
 
-        /* Fade In Animation */
+        /* Subtle Attention-Grabbing Keyframe Animations */
         .fade-in-up {
             animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Avatar Outer Ring Animation */
         .avatar-ring {
             background: linear-gradient(135deg, #3b82f6, #6366f1, #60a5fa);
             background-size: 200% 200%;
@@ -139,42 +133,68 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* Float animation */
         .floating-badge {
-            animation: float 4s ease-in-out infinite;
+            animation: float 3.5s ease-in-out infinite;
         }
 
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-4px); }
+            50% { transform: translateY(-5px); }
         }
 
         .check-icon-glow {
-            filter: drop-shadow(0 0 6px rgba(34, 197, 94, 0.6));
+            filter: drop-shadow(0 0 6px rgba(34, 197, 94, 0.7));
+            animation: pulseCheck 2s infinite alternate;
+        }
+
+        @keyframes pulseCheck {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+
+        /* Modal Overlay & Transitions */
+        .modal-overlay {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            background: rgba(3, 7, 18, 0.85);
+            backdrop-filter: blur(12px);
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-content {
+            transform: scale(0.92) translateY(10px);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1) translateY(0);
         }
     </style>
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '946859917688163');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=946859917688163&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '946859917688163');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=946859917688163&ev=PageView&noscript=1"
+    /></noscript>
 </head>
 <body class="flex justify-center items-center py-6 px-4">
 
     <canvas id="canvas-stars"></canvas>
-
     <div class="bg-glow-top"></div>
 
     <div class="relative z-10 w-full max-w-[390px] glass-card rounded-[32px] p-6 text-center fade-in-up">
@@ -182,9 +202,7 @@ src="https://www.facebook.com/tr?id=946859917688163&ev=PageView&noscript=1"
         <div class="relative flex justify-center mb-4">
             <div class="avatar-ring p-[3px] rounded-full shadow-2xl">
                 <div class="w-24 h-24 rounded-full overflow-hidden border-2 border-[#030712] relative bg-slate-900">
-                    <img src="way2labh.jpeg" 
-                         alt="WAY2LAABH STOCK SELECTION" 
-                         class="w-full h-full object-cover">
+                    <img src="way2labh.jpeg" alt="WAY2LAABH STOCK SELECTION" class="w-full h-full object-cover">
                 </div>
             </div>
             <div class="absolute bottom-0 right-1/2 translate-x-10 translate-y-1 bg-blue-600 text-white w-6 h-6 rounded-full flex items-center justify-center border-2 border-[#080d1a] text-[10px] shadow-lg">
@@ -274,19 +292,110 @@ src="https://www.facebook.com/tr?id=946859917688163&ev=PageView&noscript=1"
         </div>
 
         <div class="border-t border-slate-800/80 pt-3">
-            <p class="text-[11px] text-slate-400 flex items-center justify-center gap-1.5 font-medium">
+            <p class="text-[11px] text-slate-400 flex items-center justify-center gap-1.5 font-medium mb-2">
                 <i class="fa-solid fa-lock text-blue-400"></i>
                 <span>Instant Access</span> • <span>5000+ Members</span> • <span>Daily Free Calls</span>
             </p>
-            <p class="text-[10px] text-slate-500 mt-1 font-normal">
+            
+            <div class="flex flex-wrap justify-center gap-2 text-[10px] text-blue-400 font-semibold mb-2">
+                <button onclick="openModal('modal-about')" class="hover:underline hover:text-blue-300 transition-colors">About Us</button>
+                <span class="text-slate-600">•</span>
+                <button onclick="openModal('modal-terms')" class="hover:underline hover:text-blue-300 transition-colors">Terms</button>
+                <span class="text-slate-600">•</span>
+                <button onclick="openModal('modal-contact')" class="hover:underline hover:text-blue-300 transition-colors">Contact Us</button>
+                <span class="text-slate-600">•</span>
+                <button onclick="openModal('modal-disclaimer')" class="hover:underline hover:text-blue-300 transition-colors">Disclaimer</button>
+                <span class="text-slate-600">•</span>
+                <button onclick="openModal('modal-privacy')" class="hover:underline hover:text-blue-300 transition-colors">Privacy Policy</button>
+            </div>
+
+            <p class="text-[10px] text-slate-500 font-normal">
                 © WAY2LAABH STOCK SELECTION — Market Intelligence
             </p>
         </div>
 
     </div>
 
+    <div id="modal-about" class="modal-overlay fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div class="modal-content glass-card rounded-2xl w-full max-w-sm p-5 relative border border-blue-500/30">
+            <button onclick="closeModal('modal-about')" class="absolute top-3 right-3 text-slate-400 hover:text-white text-lg p-1">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 class="text-lg font-bold text-blue-400 mb-2 flex items-center gap-2">
+                <i class="fa-solid fa-circle-info"></i> About Us
+            </h3>
+            <div class="text-xs text-slate-300 leading-relaxed space-y-2 max-h-60 overflow-y-auto pr-1">
+                <p><strong>WAY2LAABH Stock Selection</strong> is a dedicated market research & educational platform focused on stock market analysis, options trends, and index observations (Nifty & BankNifty).</p>
+                <p>Our objective is to deliver simplified market insights, real-time momentum observations, and comprehensive chart breakdowns to help traders build market literacy.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-terms" class="modal-overlay fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div class="modal-content glass-card rounded-2xl w-full max-w-sm p-5 relative border border-blue-500/30">
+            <button onclick="closeModal('modal-terms')" class="absolute top-3 right-3 text-slate-400 hover:text-white text-lg p-1">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 class="text-lg font-bold text-blue-400 mb-2 flex items-center gap-2">
+                <i class="fa-solid fa-file-contract"></i> Terms & Conditions
+            </h3>
+            <div class="text-xs text-slate-300 leading-relaxed space-y-2 max-h-60 overflow-y-auto pr-1">
+                <p>By using this platform and joining our Telegram channel, you agree that all information shared is strictly for educational and observational purposes.</p>
+                <p>We do not guarantee financial returns. Financial markets carry substantial risk, and members must conduct independent research before engaging in trades.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-contact" class="modal-overlay fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div class="modal-content glass-card rounded-2xl w-full max-w-sm p-5 relative border border-blue-500/30">
+            <button onclick="closeModal('modal-contact')" class="absolute top-3 right-3 text-slate-400 hover:text-white text-lg p-1">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 class="text-lg font-bold text-blue-400 mb-2 flex items-center gap-2">
+                <i class="fa-solid fa-envelope"></i> Contact Us
+            </h3>
+            <div class="text-xs text-slate-300 leading-relaxed space-y-3">
+                <p>For support, inquiries, or official channel updates, please get in touch with us via:</p>
+                <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-700/50 space-y-1">
+                    <p class="flex items-center gap-2"><i class="fa-solid fa-paper-plane text-blue-400"></i> Telegram Admin: Direct Channel Support</p>
+                    <p class="flex items-center gap-2"><i class="fa-solid fa-at text-blue-400"></i> Email: support@way2laabh.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-disclaimer" class="modal-overlay fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div class="modal-content glass-card rounded-2xl w-full max-w-sm p-5 relative border border-blue-500/30">
+            <button onclick="closeModal('modal-disclaimer')" class="absolute top-3 right-3 text-slate-400 hover:text-white text-lg p-1">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 class="text-lg font-bold text-blue-400 mb-2 flex items-center gap-2">
+                <i class="fa-solid fa-triangle-exclamation"></i> Disclaimer
+            </h3>
+            <div class="text-xs text-slate-300 leading-relaxed space-y-2 max-h-60 overflow-y-auto pr-1">
+                <p><strong>Not SEBI Registered:</strong> The content provided on this page and through our channel is strictly for educational, informational, and observational purposes.</p>
+                <p>Options and stock trading involve substantial financial risk and can lead to capital loss. Always consult a certified SEBI-registered financial advisor before executing trades.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-privacy" class="modal-overlay fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div class="modal-content glass-card rounded-2xl w-full max-w-sm p-5 relative border border-blue-500/30">
+            <button onclick="closeModal('modal-privacy')" class="absolute top-3 right-3 text-slate-400 hover:text-white text-lg p-1">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 class="text-lg font-bold text-blue-400 mb-2 flex items-center gap-2">
+                <i class="fa-solid fa-user-shield"></i> Privacy Policy
+            </h3>
+            <div class="text-xs text-slate-300 leading-relaxed space-y-2 max-h-60 overflow-y-auto pr-1">
+                <p>We value your privacy. This site uses analytical tools (such as Meta Pixel) to track conversions and optimize user interaction.</p>
+                <p>No personal user financial data is stored or processed on this page. All telemetry data is processed securely in accordance with standard ad-network guidelines.</p>
+            </div>
+        </div>
+    </div>
+
     <script>
-        // Meta Pixel Real-time Subscribe Event Tracking
+        // Meta Pixel Tracking
         function trackSubscribeEvent() {
             if (typeof fbq !== 'undefined') {
                 fbq('track', 'Subscribe', {
@@ -297,6 +406,29 @@ src="https://www.facebook.com/tr?id=946859917688163&ev=PageView&noscript=1"
             }
         }
 
+        // Popup Modal Controls
+        function openModal(id) {
+            const modal = document.getElementById(id);
+            if (modal) {
+                modal.classList.add('active');
+            }
+        }
+
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            if (modal) {
+                modal.classList.remove('active');
+            }
+        }
+
+        // Close modal when clicking outside content area
+        window.addEventListener('click', (e) => {
+            if (e.target.classList.contains('modal-overlay')) {
+                e.target.classList.remove('active');
+            }
+        });
+
+        // Animated Canvas Background (Starfield)
         const canvas = document.getElementById('canvas-stars');
         const ctx = canvas.getContext('2d');
 
