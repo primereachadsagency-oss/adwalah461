@@ -1,181 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WAY2LAABH STOCK SELECTION - Market Intelligence</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
-        
-        * {
-            box-sizing: border-box;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            -webkit-tap-highlight-color: transparent;
-        }
+    <title>PANKAJ™ - Official Telegram</title>
 
-        body {
-            background: #030712;
-            color: #ffffff;
-            min-height: 100vh;
-            overflow-x: hidden;
-            position: relative;
-        }
-
-        /* Starry Background */
-        #canvas-stars {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        /* Ambient Glow Effects */
-        .bg-glow-top {
-            position: absolute;
-            top: -100px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 340px;
-            height: 340px;
-            background: radial-gradient(circle, rgba(37, 99, 235, 0.4) 0%, rgba(99, 102, 241, 0.18) 50%, rgba(0,0,0,0) 80%);
-            border-radius: 50%;
-            filter: blur(45px);
-            z-index: 1;
-            pointer-events: none;
-            animation: pulseGlow 5s ease-in-out infinite alternate;
-        }
-
-        @keyframes pulseGlow {
-            0% { opacity: 0.5; transform: translateX(-50%) scale(0.9); }
-            100% { opacity: 0.95; transform: translateX(-50%) scale(1.2); }
-        }
-
-        /* Glassmorphism Cards */
-        .glass-card {
-            background: rgba(13, 20, 38, 0.75);
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
-            border: 1px solid rgba(59, 130, 246, 0.25);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.12);
-        }
-
-        .glass-inner-card {
-            background: rgba(15, 23, 42, 0.7);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(59, 130, 246, 0.3);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.08);
-            transition: transform 0.3s ease, border-color 0.3s ease;
-        }
-
-        .glass-inner-card:hover {
-            border-color: rgba(59, 130, 246, 0.5);
-            transform: translateY(-2px);
-        }
-
-        /* High-Converting Pulse Button */
-        .btn-pulse-glow {
-            position: relative;
-            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 50%, #1e40af 100%);
-            box-shadow: 0 0 20px rgba(37, 99, 235, 0.6);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            animation: buttonGlow 2.2s infinite;
-            overflow: hidden;
-        }
-
-        .btn-pulse-glow::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(60deg, transparent, rgba(255, 255, 255, 0.35), transparent);
-            transform: rotate(30deg);
-            animation: shineEffect 3s infinite;
-        }
-
-        @keyframes buttonGlow {
-            0% { box-shadow: 0 0 15px rgba(37, 99, 235, 0.5), 0 0 30px rgba(37, 99, 235, 0.2); }
-            50% { box-shadow: 0 0 28px rgba(59, 130, 246, 0.9), 0 0 55px rgba(37, 99, 235, 0.5); }
-            100% { box-shadow: 0 0 15px rgba(37, 99, 235, 0.5), 0 0 30px rgba(37, 99, 235, 0.2); }
-        }
-
-        @keyframes shineEffect {
-            0% { left: -100%; }
-            20% { left: 100%; }
-            100% { left: 100%; }
-        }
-
-        /* Subtle Attention-Grabbing Keyframe Animations */
-        .fade-in-up {
-            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(24px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .avatar-ring {
-            background: linear-gradient(135deg, #3b82f6, #6366f1, #60a5fa);
-            background-size: 200% 200%;
-            animation: gradientBorder 4s ease infinite;
-        }
-
-        @keyframes gradientBorder {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .floating-badge {
-            animation: float 3.5s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-5px); }
-        }
-
-        .check-icon-glow {
-            filter: drop-shadow(0 0 6px rgba(34, 197, 94, 0.7));
-            animation: pulseCheck 2s infinite alternate;
-        }
-
-        @keyframes pulseCheck {
-            0% { transform: scale(1); }
-            100% { transform: scale(1.1); }
-        }
-
-        /* Modal Overlay & Transitions */
-        .modal-overlay {
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            background: rgba(3, 7, 18, 0.85);
-            backdrop-filter: blur(12px);
-        }
-
-        .modal-overlay.active {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .modal-content {
-            transform: scale(0.92) translateY(10px);
-            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .modal-overlay.active .modal-content {
-            transform: scale(1) translateY(0);
-        }
-    </style>
-
+    <!-- Meta Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -191,299 +21,323 @@
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=946859917688163&ev=PageView&noscript=1"
     /></noscript>
+    <!-- End Meta Pixel Code -->
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #121212;
+            /* 3D Cube Pattern Background */
+            background-image: 
+                linear-gradient(30deg, #181818 12%, transparent 12.5%, transparent 87%, #181818 87.5%, #181818),
+                linear-gradient(150deg, #181818 12%, transparent 12.5%, transparent 87%, #181818 87.5%, #181818),
+                linear-gradient(30deg, #181818 12%, transparent 12.5%, transparent 87%, #181818 87.5%, #181818),
+                linear-gradient(150deg, #181818 12%, transparent 12.5%, transparent 87%, #181818 87.5%, #181818),
+                linear-gradient(60deg, #222 25%, transparent 25.5%, transparent 75%, #222 75%, #222),
+                linear-gradient(60deg, #222 25%, transparent 25.5%, transparent 75%, #222 75%, #222);
+            background-size: 40px 70px;
+            background-position: 0 0, 0 0, 20px 35px, 20px 35px, 0 0, 20px 35px;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: #1e1e1e;
+            border-radius: 20px;
+            padding: 40px 30px;
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid #2a2a2a;
+        }
+
+        .profile-img {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            border: 3px solid #ffcc00;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .title {
+            font-size: 26px;
+            font-weight: 800;
+            color: #ffcc00;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            color: #cccccc;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .badge-container {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 25px;
+        }
+
+        .badge {
+            background-color: #2d2d2d;
+            padding: 10px 16px;
+            border-radius: 12px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .btn-telegram {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background-color: #0088cc;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 700;
+            padding: 14px;
+            border-radius: 30px;
+            margin-bottom: 25px;
+            transition: background 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 136, 204, 0.3);
+            cursor: pointer;
+        }
+
+        .btn-telegram:hover {
+            background-color: #0077b5;
+        }
+
+        .feature-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .feature-item {
+            background-color: #282828;
+            border: 1px solid #333333;
+            border-radius: 12px;
+            padding: 14px;
+            text-align: left;
+            font-size: 14px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .check-icon {
+            color: #00e676;
+            font-weight: bold;
+        }
+
+        /* Footer Links */
+        .footer-links {
+            margin-top: 25px;
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            font-size: 12px;
+        }
+
+        .footer-links a {
+            color: #888888;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .footer-links a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        /* Popup Modal Styling */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background-color: #1e1e1e;
+            border-radius: 15px;
+            padding: 25px;
+            max-width: 500px;
+            width: 100%;
+            position: relative;
+            border: 1px solid #333;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .modal-content h3 {
+            color: #ffcc00;
+            margin-bottom: 15px;
+        }
+
+        .modal-content p {
+            font-size: 14px;
+            color: #ccc;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 24px;
+            color: #aaa;
+            cursor: pointer;
+        }
+
+        .close-btn:hover {
+            color: #fff;
+        }
+    </style>
 </head>
-<body class="flex justify-center items-center py-6 px-4">
+<body>
 
-    <canvas id="canvas-stars"></canvas>
-    <div class="bg-glow-top"></div>
+    <div class="card">
+        <!-- Profile Image -->
+        <img src="Pankaj11.jpeg" alt="Pankaj" class="profile-img">
 
-    <div class="relative z-10 w-full max-w-[390px] glass-card rounded-[32px] p-6 text-center fade-in-up">
-        
-        <div class="relative flex justify-center mb-4">
-            <div class="avatar-ring p-[3px] rounded-full shadow-2xl">
-                <div class="w-24 h-24 rounded-full overflow-hidden border-2 border-[#030712] relative bg-slate-900">
-                    <img src="way2labh.jpeg" alt="WAY2LAABH STOCK SELECTION" class="w-full h-full object-cover">
-                </div>
-            </div>
-            <div class="absolute bottom-0 right-1/2 translate-x-10 translate-y-1 bg-blue-600 text-white w-6 h-6 rounded-full flex items-center justify-center border-2 border-[#080d1a] text-[10px] shadow-lg">
-                <i class="fa-solid fa-check"></i>
-            </div>
+        <!-- Title & Crown Icons -->
+        <div class="title">
+            <span>👑</span> PANKAJ BHARDWAJ™ <span>👑</span>
         </div>
 
-        <h1 class="text-2xl font-black tracking-tight text-white uppercase mb-1 drop-shadow-md">
-            WAY2LAABH
-        </h1>
-        <h2 class="text-xl font-bold tracking-tight text-blue-400 uppercase mb-2">
-            STOCK SELECTION
-        </h2>
-
-        <div class="inline-flex items-center gap-1.5 bg-blue-950/80 border border-blue-500/40 text-blue-300 text-[11px] font-bold px-4 py-1.5 rounded-full mb-6 floating-badge shadow-lg">
-            <span class="text-yellow-400">⚡</span> NIFTY • BANKNIFTY • OPTIONS <span class="text-yellow-400">⚡</span>
+        <!-- Subtitle -->
+        <div class="subtitle">
+            <span class="check-icon">✅</span> Trusted by thousands of learners
         </div>
 
-        <a href="https://t.me/+rSGBLkj4Sco5YmE1" target="_blank" onclick="trackSubscribeEvent()" class="btn-pulse-glow flex items-center justify-center gap-2.5 text-white font-extrabold py-3.5 px-6 rounded-2xl w-full text-base mb-6 active:scale-95 transition-transform">
-            <i class="fa-paper-plane text-lg text-blue-200"></i>
-            <span>JOIN TELEGRAM CHANNEL</span>
-            <span class="text-lg">🚀</span>
+        <!-- Badges -->
+        <div class="badge-container">
+            <div class="badge">24/7 Updates</div>
+            <div class="badge">Free to Join</div>
+        </div>
+
+        <!-- Main CTA Link with Click Event Tracking -->
+        <a href="https://t.me/+rSGBLkj4Sco5YmE1" target="_blank" class="btn-telegram" onclick="trackLeadEvent()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#ffffff">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+            </svg>
+            Join on Telegram
         </a>
 
-        <div class="glass-inner-card rounded-2xl p-5 mb-6 text-left relative overflow-hidden">
-            <div class="flex items-center gap-2 mb-4 border-b border-blue-900/40 pb-3">
-                <span class="text-xl">📊</span>
-                <h3 class="text-sm font-extrabold text-blue-100 tracking-wide uppercase">
-                    NIFTY BANKNIFTY & STOCK OPTIONS
-                </h3>
+        <!-- Feature List -->
+        <div class="feature-list">
+            <div class="feature-item">
+                <span class="check-icon">✔</span> Market Insights & Discussions
             </div>
-
-            <ul class="space-y-3.5 text-sm text-slate-200 font-semibold mb-5">
-                <li class="flex items-start gap-3">
-                    <span class="flex gap-0.5 text-emerald-400 text-base check-icon-glow">
-                        <i class="fa-solid fa-circle-check"></i>
-                        <i class="fa-solid fa-circle-check"></i>
-                    </span>
-                    <span class="text-slate-100 leading-snug">Get up to <strong class="text-emerald-400 font-bold">100-300 Points</strong> Daily</span>
-                </li>
-                <li class="flex items-start gap-3">
-                    <span class="flex gap-0.5 text-emerald-400 text-base check-icon-glow">
-                        <i class="fa-solid fa-circle-check"></i>
-                        <i class="fa-solid fa-circle-check"></i>
-                    </span>
-                    <span class="text-slate-100 leading-snug"><strong class="text-emerald-400 font-bold">80-90%</strong> High Accuracy Calls</span>
-                </li>
-                <li class="flex items-start gap-3">
-                    <span class="flex gap-0.5 text-emerald-400 text-base check-icon-glow">
-                        <i class="fa-solid fa-circle-check"></i>
-                        <i class="fa-solid fa-circle-check"></i>
-                    </span>
-                    <span class="text-slate-100 leading-snug">3-4 Observational Calls Daily</span>
-                </li>
-                <li class="flex items-start gap-3">
-                    <span class="flex gap-0.5 text-emerald-400 text-base check-icon-glow">
-                        <i class="fa-solid fa-circle-check"></i>
-                        <i class="fa-solid fa-circle-check"></i>
-                    </span>
-                    <span class="text-slate-100 leading-snug">3 Daily Best Trades For Everyone</span>
-                </li>
-            </ul>
-
-            <div class="space-y-2">
-                <div class="bg-blue-950/60 border border-blue-500/30 rounded-xl p-2.5 text-center text-xs text-blue-200 font-bold flex items-center justify-center gap-2">
-                    <span>📣</span> Disclaimer: DAILY FREE DEMO CALL <span class="text-emerald-400">✅</span>
-                </div>
-
-                <div class="bg-rose-950/40 border border-rose-500/30 rounded-xl p-2.5 text-center text-[11px] text-rose-200 font-bold flex items-center justify-center gap-1.5">
-                    <span class="w-2 h-2 rounded-full bg-rose-500 animate-ping"></span>
-                    <span>LIVE STOCK ANALYSIS • MARKET UPDATES • FII/DII DATA</span>
-                </div>
+            <div class="feature-item">
+                <span class="check-icon">✔</span> Learn with Experts
+            </div>
+            <div class="feature-item">
+                <span class="check-icon">✔</span> Practical Strategies
             </div>
         </div>
 
-        <a href="https://t.me/+rSGBLkj4Sco5YmE1" target="_blank" onclick="trackSubscribeEvent()" class="btn-pulse-glow flex items-center justify-center gap-2.5 text-white font-black py-4 px-6 rounded-2xl w-full text-lg mb-5 active:scale-95 transition-transform tracking-wider">
-            <span class="text-yellow-300">⚡</span>
-            <span>JOIN TELEGRAM NOW</span>
-            <span class="text-xl">💎</span>
-        </a>
-
-        <div class="inline-flex items-center gap-2 bg-slate-900/80 border border-blue-800/40 text-blue-300 text-[11px] px-3.5 py-1.5 rounded-full mb-4 font-medium">
-            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span>Meta Pixel Active</span>
-            <span class="text-slate-500">•</span>
-            <span class="text-slate-400">ID: 1720478142456221</span>
-        </div>
-
-        <div class="border-t border-slate-800/80 pt-3">
-            <p class="text-[11px] text-slate-400 flex items-center justify-center gap-1.5 font-medium mb-2">
-                <i class="fa-solid fa-lock text-blue-400"></i>
-                <span>Instant Access</span> • <span>5000+ Members</span> • <span>Daily Free Calls</span>
-            </p>
-            
-            <div class="flex flex-wrap justify-center gap-2 text-[10px] text-blue-400 font-semibold mb-2">
-                <button onclick="openModal('modal-about')" class="hover:underline hover:text-blue-300 transition-colors">About Us</button>
-                <span class="text-slate-600">•</span>
-                <button onclick="openModal('modal-terms')" class="hover:underline hover:text-blue-300 transition-colors">Terms</button>
-                <span class="text-slate-600">•</span>
-                <button onclick="openModal('modal-contact')" class="hover:underline hover:text-blue-300 transition-colors">Contact Us</button>
-                <span class="text-slate-600">•</span>
-                <button onclick="openModal('modal-disclaimer')" class="hover:underline hover:text-blue-300 transition-colors">Disclaimer</button>
-                <span class="text-slate-600">•</span>
-                <button onclick="openModal('modal-privacy')" class="hover:underline hover:text-blue-300 transition-colors">Privacy Policy</button>
-            </div>
-
-            <p class="text-[10px] text-slate-500 font-normal">
-                © WAY2LAABH STOCK SELECTION — Market Intelligence
-            </p>
-        </div>
-
-    </div>
-
-    <div id="modal-about" class="modal-overlay fixed inset-0 z-50 flex items-center justify-center p-4">
-        <div class="modal-content glass-card rounded-2xl w-full max-w-sm p-5 relative border border-blue-500/30">
-            <button onclick="closeModal('modal-about')" class="absolute top-3 right-3 text-slate-400 hover:text-white text-lg p-1">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            <h3 class="text-lg font-bold text-blue-400 mb-2 flex items-center gap-2">
-                <i class="fa-solid fa-circle-info"></i> About Us
-            </h3>
-            <div class="text-xs text-slate-300 leading-relaxed space-y-2 max-h-60 overflow-y-auto pr-1">
-                <p><strong>WAY2LAABH Stock Selection</strong> is a dedicated market research & educational platform focused on stock market analysis, options trends, and index observations (Nifty & BankNifty).</p>
-                <p>Our objective is to deliver simplified market insights, real-time momentum observations, and comprehensive chart breakdowns to help traders build market literacy.</p>
-            </div>
+        <!-- Footer Modal Triggers -->
+        <div class="footer-links">
+            <a onclick="openModal('aboutModal')">About Us</a> | 
+            <a onclick="openModal('termsModal')">Terms</a> | 
+            <a onclick="openModal('disclaimerModal')">Disclaimer</a> | 
+            <a onclick="openModal('contactModal')">Contact Us</a>
         </div>
     </div>
 
-    <div id="modal-terms" class="modal-overlay fixed inset-0 z-50 flex items-center justify-center p-4">
-        <div class="modal-content glass-card rounded-2xl w-full max-w-sm p-5 relative border border-blue-500/30">
-            <button onclick="closeModal('modal-terms')" class="absolute top-3 right-3 text-slate-400 hover:text-white text-lg p-1">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            <h3 class="text-lg font-bold text-blue-400 mb-2 flex items-center gap-2">
-                <i class="fa-solid fa-file-contract"></i> Terms & Conditions
-            </h3>
-            <div class="text-xs text-slate-300 leading-relaxed space-y-2 max-h-60 overflow-y-auto pr-1">
-                <p>By using this platform and joining our Telegram channel, you agree that all information shared is strictly for educational and observational purposes.</p>
-                <p>We do not guarantee financial returns. Financial markets carry substantial risk, and members must conduct independent research before engaging in trades.</p>
-            </div>
+    <!-- Modals (Popups) -->
+    <div id="aboutModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('aboutModal')">&times;</span>
+            <h3>About Us</h3>
+            <p>Welcome to Pankaj™ community! We provide market insights, educational strategies, and continuous market updates to help traders and learners improve their skills.</p>
         </div>
     </div>
 
-    <div id="modal-contact" class="modal-overlay fixed inset-0 z-50 flex items-center justify-center p-4">
-        <div class="modal-content glass-card rounded-2xl w-full max-w-sm p-5 relative border border-blue-500/30">
-            <button onclick="closeModal('modal-contact')" class="absolute top-3 right-3 text-slate-400 hover:text-white text-lg p-1">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            <h3 class="text-lg font-bold text-blue-400 mb-2 flex items-center gap-2">
-                <i class="fa-solid fa-envelope"></i> Contact Us
-            </h3>
-            <div class="text-xs text-slate-300 leading-relaxed space-y-3">
-                <p>For support, inquiries, or official channel updates, please get in touch with us via:</p>
-                <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-700/50 space-y-1">
-                    <p class="flex items-center gap-2"><i class="fa-solid fa-paper-plane text-blue-400"></i> Telegram Admin: Direct Channel Support</p>
-                    <p class="flex items-center gap-2"><i class="fa-solid fa-at text-blue-400"></i> Email: support@way2laabh.com</p>
-                </div>
-            </div>
+    <div id="termsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('termsModal')">&times;</span>
+            <h3>Terms & Conditions</h3>
+            <p>By accessing our content, you agree to use this information purely for educational purposes. We do not guarantee profits, and trading carries inherent risks.</p>
         </div>
     </div>
 
-    <div id="modal-disclaimer" class="modal-overlay fixed inset-0 z-50 flex items-center justify-center p-4">
-        <div class="modal-content glass-card rounded-2xl w-full max-w-sm p-5 relative border border-blue-500/30">
-            <button onclick="closeModal('modal-disclaimer')" class="absolute top-3 right-3 text-slate-400 hover:text-white text-lg p-1">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            <h3 class="text-lg font-bold text-blue-400 mb-2 flex items-center gap-2">
-                <i class="fa-solid fa-triangle-exclamation"></i> Disclaimer
-            </h3>
-            <div class="text-xs text-slate-300 leading-relaxed space-y-2 max-h-60 overflow-y-auto pr-1">
-                <p><strong>Not SEBI Registered:</strong> The content provided on this page and through our channel is strictly for educational, informational, and observational purposes.</p>
-                <p>Options and stock trading involve substantial financial risk and can lead to capital loss. Always consult a certified SEBI-registered financial advisor before executing trades.</p>
-            </div>
+    <div id="disclaimerModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('disclaimerModal')">&times;</span>
+            <h3>Disclaimer</h3>
+            <p>We are not SEBI registered financial advisors. All content shared is strictly for educational and informational purposes. Please consult your financial advisor before trading.</p>
         </div>
     </div>
 
-    <div id="modal-privacy" class="modal-overlay fixed inset-0 z-50 flex items-center justify-center p-4">
-        <div class="modal-content glass-card rounded-2xl w-full max-w-sm p-5 relative border border-blue-500/30">
-            <button onclick="closeModal('modal-privacy')" class="absolute top-3 right-3 text-slate-400 hover:text-white text-lg p-1">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            <h3 class="text-lg font-bold text-blue-400 mb-2 flex items-center gap-2">
-                <i class="fa-solid fa-user-shield"></i> Privacy Policy
-            </h3>
-            <div class="text-xs text-slate-300 leading-relaxed space-y-2 max-h-60 overflow-y-auto pr-1">
-                <p>We value your privacy. This site uses analytical tools (such as Meta Pixel) to track conversions and optimize user interaction.</p>
-                <p>No personal user financial data is stored or processed on this page. All telemetry data is processed securely in accordance with standard ad-network guidelines.</p>
-            </div>
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('contactModal')">&times;</span>
+            <h3>Contact Us</h3>
+            <p>For any inquiries or assistance, feel free to reach out to us via our official Telegram handle or join our channel for quick support.</p>
         </div>
     </div>
 
     <script>
-        // Meta Pixel Tracking
-        function trackSubscribeEvent() {
+        // Real-Time Event Tracking Function
+        function trackLeadEvent() {
             if (typeof fbq !== 'undefined') {
-                fbq('track', 'Subscribe', {
-                    value: '0.00',
-                    currency: 'INR',
-                    predicted_ltv: '0.00'
-                });
+                fbq('track', 'Lead');
+                fbq('track', 'Subscribe');
             }
         }
 
-        // Popup Modal Controls
+        // Modal Functions
         function openModal(id) {
-            const modal = document.getElementById(id);
-            if (modal) {
-                modal.classList.add('active');
-            }
+            document.getElementById(id).style.display = 'flex';
         }
 
         function closeModal(id) {
-            const modal = document.getElementById(id);
-            if (modal) {
-                modal.classList.remove('active');
+            document.getElementById(id).style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = "none";
             }
         }
-
-        // Close modal when clicking outside content area
-        window.addEventListener('click', (e) => {
-            if (e.target.classList.contains('modal-overlay')) {
-                e.target.classList.remove('active');
-            }
-        });
-
-        // Animated Canvas Background (Starfield)
-        const canvas = document.getElementById('canvas-stars');
-        const ctx = canvas.getContext('2d');
-
-        let width, height;
-        let stars = [];
-
-        function resizeCanvas() {
-            width = canvas.width = window.innerWidth;
-            height = canvas.height = window.innerHeight;
-            initStars();
-        }
-
-        function initStars() {
-            stars = [];
-            const count = Math.floor((width * height) / 3000);
-            for (let i = 0; i < count; i++) {
-                stars.push({
-                    x: Math.random() * width,
-                    y: Math.random() * height,
-                    radius: Math.random() * 1.5 + 0.3,
-                    alpha: Math.random(),
-                    speed: Math.random() * 0.015 + 0.005,
-                    twinkleDir: Math.random() > 0.5 ? 1 : -1,
-                    color: ['#ffffff', '#a5f3fc', '#c7d2fe', '#fef08a'][Math.floor(Math.random() * 4)]
-                });
-            }
-        }
-
-        function animateStars() {
-            ctx.clearRect(0, 0, width, height);
-
-            stars.forEach(star => {
-                star.alpha += star.speed * star.twinkleDir;
-                if (star.alpha >= 0.9) star.twinkleDir = -1;
-                if (star.alpha <= 0.15) star.twinkleDir = 1;
-
-                star.y -= star.speed * 15;
-                if (star.y < 0) {
-                    star.y = height;
-                    star.x = Math.random() * width;
-                }
-
-                ctx.beginPath();
-                ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-                ctx.fillStyle = star.color;
-                ctx.globalAlpha = Math.max(0, Math.min(1, star.alpha));
-                ctx.fill();
-            });
-
-            requestAnimationFrame(animateStars);
-        }
-
-        window.addEventListener('resize', resizeCanvas);
-        resizeCanvas();
-        animateStars();
     </script>
 </body>
 </html>
